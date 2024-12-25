@@ -4,7 +4,13 @@ interface Todo {
 }
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3001/todos");
+  const res = await fetch("http://localhost:3001/todos", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "force-cache"
+  });
   const todos: Todo[] = await res.json();
 
   console.log(todos);
