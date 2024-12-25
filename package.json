@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "json-server --watch db.json --port 3001 & next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "json-server": "json-server --watch db.json --port 3001"
+    "json-server": "json-server --watch db.json --port 3001",
+    "preview": "next start & json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3",
